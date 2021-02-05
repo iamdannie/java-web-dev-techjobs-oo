@@ -20,17 +20,21 @@ public class Job {
         id =nextId;
         nextId++;
     }
-    public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPositionType, CoreCompetency aCoreCompetency ) {
+    public Job( String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency ) {
         this();
-        this.name = aName;
+        this.name = name;
+        this.employer = employer;
+        this.location = location;
+        this.positionType = positionType;
+        this.coreCompetency = coreCompetency;
     }
+
+
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
-    public void setName(String name) {
-        this.name = name;
-    }
+
 
     public void setEmployer(Employer employer) {
         this.employer = employer;
@@ -65,4 +69,7 @@ public class Job {
         return Objects.hash(id);
     }
 
+    public String getName() {
+        return name;
+    }
 }
