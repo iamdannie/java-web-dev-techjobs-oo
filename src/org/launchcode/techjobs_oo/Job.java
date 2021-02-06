@@ -1,5 +1,7 @@
 package org.launchcode.techjobs_oo;
 
+import org.junit.Test;
+
 import java.util.Objects;
 
 public class Job {
@@ -94,4 +96,18 @@ public class Job {
     public String getName() {
         return name;
     }
-}
+
+    @Override
+    public String toString() {
+        return
+                "ID:" + id +"\n"+
+                "NAME:" + name + "\n" +
+                "EMPLOYER:" + employer + "\n"+
+                "LOCATION:" + location + "\n"+
+                "POSITION TYPE:" + positionType.getValue() +"\n"+
+                "CORE COMPETENCY:" + coreCompetency;
+
+    }
+
+    }
+
