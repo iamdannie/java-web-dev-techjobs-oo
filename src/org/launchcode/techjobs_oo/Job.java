@@ -36,24 +36,46 @@ public class Job {
     //  and id.
 
 
+    public int getId() {
+        return id;
+    }
+
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Employer getEmployer() {
+        return employer;
+    }
+
     public void setEmployer(Employer employer) {
         this.employer = employer;
+    }
+
+    public Location getLocation() {
+        return location;
     }
 
     public void setLocation(Location location) {
         this.location = location;
     }
 
+    public PositionType getPositionType() {
+        return positionType;
+    }
+
     public void setPositionType(PositionType positionType) {
         this.positionType = positionType;
     }
 
-    public void setCoreCompetency(CoreCompetency coreCompetency) {
-        this.coreCompetency = coreCompetency;
+    public CoreCompetency getCoreCompetency() {
+        return coreCompetency;
     }
 
-    public int getId() {
-        return id;
+    public void setCoreCompetency(CoreCompetency coreCompetency) {
+        this.coreCompetency = coreCompetency;
     }
 
     @Override

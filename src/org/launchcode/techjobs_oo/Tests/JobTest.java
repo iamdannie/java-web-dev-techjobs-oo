@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.launchcode.techjobs_oo.Job;
+import org.launchcode.techjobs_oo.*;
 
 public class JobTest {
     Job houseKeeper;
@@ -19,13 +19,19 @@ public class JobTest {
     public void testSettingJobId() {
         assertNotEquals(houseKeeper, groundsMen);
     }
-//    @Test
-//    public void testJobConstructorSetsAllFields() {
-//        Job jobSearchField = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-//        assertEquals("Product tester",jobSearchField.getName());
-//        assertEquals("ACME",jobSearchField.getValue());
-//        assertEquals("Desert",jobSearchField.getValue);
-//        assertEquals("Quality control",jobSearchField.getValue);
-//        assertEquals("Persistence",jobSearchField.getValue);
-//    }
+    @Test
+    public void testJobConstructorSetsAllFields() {
+        Job jobSearchField = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals("Product tester",jobSearchField.getName());
+        assertEquals("ACME",jobSearchField.getEmployer().getValue());
+        assertEquals("Desert",jobSearchField.getLocation().getValue());
+        assertEquals("Quality control",jobSearchField.getPositionType().getValue());
+        assertEquals("Persistence",jobSearchField.getCoreCompetency().getValue());
+    }
+    @Test
+    public void testJobForEquality() {
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertFalse(job.equals(job1));
+    }
 }
