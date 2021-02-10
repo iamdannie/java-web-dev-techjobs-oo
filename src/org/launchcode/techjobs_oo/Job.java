@@ -100,12 +100,12 @@ public class Job {
     @Override
     public String toString() {
         return
-                "ID:" + id +"\n"+
+                "\n"+ "ID:" + id +"\n"+
                 "NAME:" + name + "\n" +
                 "EMPLOYER:" + employer + "\n"+
                 "LOCATION:" + location + "\n"+
                 "POSITION TYPE:" + positionType.getValue() +"\n"+
-                "CORE COMPETENCY:" + coreCompetency;
+                "CORE COMPETENCY:" + coreCompetency+ "\n";
 
     }
 

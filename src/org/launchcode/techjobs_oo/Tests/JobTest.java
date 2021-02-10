@@ -38,16 +38,24 @@ public class JobTest {
     public void toToString() {
         Job testStringJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String output =
-                "ID:" + testStringJob.getId()+ "\n"+
+                "\n"+"ID:" + testStringJob.getId()+ "\n"+
                 "NAME:" + testStringJob.getName() +"\n" +
                 "EMPLOYER:" + testStringJob.getEmployer()+ "\n"+
                 "LOCATION:" + testStringJob.getLocation()+"\n"+
                 "POSITION TYPE:" +testStringJob.getPositionType().getValue()+"\n"+
-                "CORE COMPETENCY:" +testStringJob.getCoreCompetency();
+                "CORE COMPETENCY:" +testStringJob.getCoreCompetency()+ "\n";
 
             assertEquals(output, testStringJob.toString());
 
-
-
     }
+
+    @Test
+    public void TestToStringAndNewLine() {
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        char first = job.toString().charAt(0);
+        char last = job.toString().charAt(job.toString().length()-1);
+        assertTrue(first==last);
+        assertEquals(first,last);
+    }
+
 }
